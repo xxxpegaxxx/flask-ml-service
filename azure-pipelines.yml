@@ -1,5 +1,13 @@
 # Starter pipeline
 # Start with a minimal pipeline that you can customize to build and deploy your code.
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Azure subscription 1 (4a50042c-c104-43f9-bd2e-6d6c5e605046)'
+    appType: 'webAppLinux'
+    appName: 'My-Unique-App'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    runtimeStack: 'PYTHON|3.7'
+    startUpCommand: 'python app.py'
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
